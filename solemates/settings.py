@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure-1re3o5y%_*zav7*0$$9)6$bkp2y^1hux&4(um5+ful%zd*0$um
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost','127.0.0.1:8005','*']
+CSRF_TRUSTED_ORIGINS = [
+    'https://ayushi-ecom.stablegen.in',
+]
+
 
 
 # Application definition
