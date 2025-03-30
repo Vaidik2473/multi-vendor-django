@@ -15,26 +15,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path ,include
+from django.urls import path, include
 from readApp import views
-# from readApp.views import index
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('',views.store,name="store"),
-    # path('', index, name='index'),
-    path('login/',views.Login_page,name="Login"),
-    path('cart/login/',views.Login_page,name="Login"),
-    path('checkout/login/',views.Login_page,name="Login"),
-    path('logout/',views.logout_page,name="Logout"),
-    path('register/',views.register,name="register"),
-    path('cart/',views.cart,name="cart"), 
-    path('checkout/',views.checkout,name="checkout"),
+    path('', views.store, name="store"),
+    path('login/', views.Login_page, name="Login"),
+    path('cart/login/', views.Login_page, name="Login"),
+    path('checkout/login/', views.Login_page, name="Login"),
+    path('logout/', views.logout_page, name="Logout"),
+    path('register/', views.register, name="register"),
+    path('cart/', views.cart, name="cart"), 
+    path('checkout/', views.checkout, name="checkout"),
     path('admin/', admin.site.urls),
-    path('update_item/',views.updateItem,name="update_item"),
-    path('process_order/',views.processOrder,name="process_order"),
-
+    path('update_item/', views.updateItem, name="update_item"),
+    path('process_order/', views.processOrder, name="process_order"),
 ]
 
-urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
