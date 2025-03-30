@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'solemates.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'solemates',
-        'USER': 'postgres',
-        'PASSWORD': 'Gati100',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': 'neondb',  # PGDATABASE
+        'USER': 'neondb_owner',  # PGUSER
+        'PASSWORD': 'npg_KQz8dEFR6keo',  # PGPASSWORD
+        'HOST': 'ep-floral-band-a292g14g-pooler.eu-central-1.aws.neon.tech',  # PGHOST
+        'PORT': '5432',  # Typically remains the same
     }
 }
 
