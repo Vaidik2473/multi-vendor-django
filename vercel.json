@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "solemates/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "pythonVersion": "3.10" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "solemates/wsgi.py"
+    }
+  ]
+}
