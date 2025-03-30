@@ -1,0 +1,81 @@
+{% extends 'HOME/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-fluid" >
+        <div style="width:60%; height:700px; float:left;">
+            
+          <img src="{% static 'images/main_img13.webp' %}" alt="" style="height: 655px; width: 100%;margin-top: 80px">
+        </div>
+        <div style="width:40%; height:700px; float:right; padding-left:10px">
+              <img src="{% static 'images/main_img12.webp' %}" alt="" style=" width: 100%;margin-top: 80px; height:325px; ">
+              <img src="{% static 'images/main_img10.webp' %}" alt="" style=" width: 100%;margin-top: 5px; height:325px; ">
+        </div>
+    </div>
+        
+    
+    <div class="row pt-3" >
+        {% for product in products %}
+        <div class="col-lg-3" style="margin-top: 40px;">
+            <img  src="{{product.imageURL}}" alt="" class="shoe_img" style="height: 370px; width:100% ;">
+            <div class="box-element product">
+                <h6><strong>{{product.name}}</strong></h6>
+                <hr>
+                <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart"> Add to Cart</button>
+                <a href="{% url 'cart' %}" class="btn btn-success " >View</a>
+                <h4 style="float:right;">₹{{product.price|floatformat:2}}</h4>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+<!-- </div> -->
+    
+    <div class="container-fluid" style="padding-bottom: 100px;">
+
+    </div>
+    
+
+    <footer class="footer color-inverse gradient " style="padding-bottom: 100px;background-color: black;padding-top: 100px;
+    color: rgb(207, 200, 200);">
+      <div class="container footer">
+            <div class="row">
+              <div class="col-md-10 mx-auto">
+                  <div class="row">
+                    <div class="col-md-3">
+                          <ul>
+                            <h4>Info</h4>
+                            <a href="https://www.youtube.com/" target="_blank" style="color: white;text-decoration: none;"><li>Contact Us</li></a>
+                            <li>Media Center</li>
+                            <li>Brands</li>
+                            <li>Blogs</li>
+                          </ul>
+                    </div>
+                    <div class="col-md-3">
+                      <ul>
+                        <h4>Policies</h4>
+                        <li>Help Center</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms and Conditions</li>
+                        <li>Order & Shipping</li>
+                      </ul>
+                </div>
+                <div class="col-md-3">
+                  <ul>
+                    <h4>Help Center</h4>
+                    <li>Jobs</li>
+              
+                  </ul>
+                 </div>
+                 <div class="col-md-3">
+                  <ul>
+                    <h4>Our Socials</h4>
+                    <li>Instagram</li>
+                    <li>Facebook</li>
+                  </ul>
+                 </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock content %}
